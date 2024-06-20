@@ -112,7 +112,11 @@
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
+
+                console.log('Instance created',window.Telegram.WebApp);
+                window.unityInstance = unityInstance;
                 window.unityInstance.SendMessage("TelegramController", "SetWebAppUser", JSON.stringify(window.Telegram.WebApp.initDataUnsafe.user));
+
               }).catch((message) => {
                 alert(message);
               });
